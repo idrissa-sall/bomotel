@@ -1,0 +1,89 @@
+<nav
+    aria-label="Navigation principale"
+    class=" text-default bg-main"
+    data-controller="navbar"
+    data-action="keydown.esc->navbar#close"
+>
+    <div class="flex flex-wrap items-center justify-between gap-4 py-6 px-4">
+        <a href="#Accueil" class="text-xl font-bold lg:text-3xl">Bomotel Montluçon</a>
+
+        <div class="order-2 ml-auto flex shrink-0 items-center gap-2 lg:order-3">
+            <a
+                href="#"
+                class="bg-bg text-main px-4 py-2 rounded-md font-bold
+                        inline-flex items-center gap-2
+                        hover:bg-default transition-colors
+                        focus-visible:outline-2 focus-visible:outline-offset-2
+                        focus-visible:outline-default"
+            >
+                <img
+                    src="{{ asset('images/logos/logo_contact_hotel.png') }}"
+                    alt="Contact Hôtel"
+                    class="h-10 w-auto shrink-0"
+                />
+                Réserver
+            </a>
+            <button
+                type="button"
+                class="group relative inline-flex size-11 items-center justify-center rounded-md
+                        lg:hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-default"
+                aria-label="Menu principal"
+                aria-expanded="false"
+                aria-controls="navbar-menu"
+                data-navbar-target="button"
+                data-action="click->navbar#toggle"
+            >
+                {# Burger : visible quand le menu est fermé #}
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                    class="pointer-events-none absolute size-6
+                            scale-100 rotate-0 opacity-100
+                            transition duration-200 ease-in-out
+                            group-aria-expanded:scale-75
+                            group-aria-expanded:rotate-90
+                            group-aria-expanded:opacity-0
+                            motion-reduce:transition-none"
+                >
+                    <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+
+                {# Croix : visible quand le menu est ouvert #}
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                    class="pointer-events-none absolute size-6
+                        scale-75 -rotate-90 opacity-0
+                        transition duration-200 ease-in-out
+                        group-aria-expanded:scale-100
+                        group-aria-expanded:rotate-0
+                        group-aria-expanded:opacity-100
+                        motion-reduce:transition-none"
+                >
+                    <path stroke-linecap="round" d="m6 6 12 12M6 18 18 6"/>
+                </svg>
+            </button>
+        </div>
+
+        {# Navigation masqué sur mobile #}
+        <div id="navbar-menu" class="order-3 hidden w-full lg:order-2 lg:ml-auto lg:block lg:w-auto" data-navbar-target="menu">
+            <div class="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-8 flex-wrap">
+                <ul class="flex flex-col lg:flex-row gap-4">
+                    <li><a href="#" class="navLink lg:text-lg">Accueil</a></li>
+                    <li><a href="#" class="navLink lg:text-lg">Chambres</a></li>
+                    <li><a href="#" class="navLink lg:text-lg">Experiences</a></li>
+                    <li><a href="#" class="navLink lg:text-lg">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+    
