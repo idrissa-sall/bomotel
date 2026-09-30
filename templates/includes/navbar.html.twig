@@ -1,13 +1,15 @@
 <nav
     aria-label="Navigation principale"
-    class=" text-default bg-main"
+    class="sticky top-0 z-50 text-default bg-main"
     data-controller="navbar"
     data-action="keydown.esc->navbar#close"
 >
     <div class="flex flex-wrap items-center justify-between gap-4 py-6 px-4">
-        <a href="#Accueil" class="text-xl font-bold lg:text-3xl">Bomotel Montluçon</a>
+        <a href="#Accueil" class="text-xl font-bold md:text-3xl">
+            <img src="{{ asset('images/logos/logo_white.png') }}" alt="todo" class="w-auto h-10">
+        </a>
 
-        <div class="order-2 ml-auto flex shrink-0 items-center gap-2 lg:order-3">
+        <div class="order-2 ml-auto flex shrink-0 items-center gap-2 md:order-3">
             <a
                 href="#"
                 class="bg-bg text-main px-4 py-2 rounded-md font-bold
@@ -21,12 +23,12 @@
                     alt="Contact Hôtel"
                     class="h-10 w-auto shrink-0"
                 />
-                Réserver
+                <span class="border-l border-main pl-1">Réserver</span>
             </a>
             <button
                 type="button"
                 class="group relative inline-flex size-11 items-center justify-center rounded-md
-                        lg:hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-default"
+                        md:hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-default"
                 aria-label="Menu principal"
                 aria-expanded="false"
                 aria-controls="navbar-menu"
@@ -74,13 +76,13 @@
         </div>
 
         {# Navigation masqué sur mobile #}
-        <div id="navbar-menu" class="order-3 hidden w-full lg:order-2 lg:ml-auto lg:block lg:w-auto" data-navbar-target="menu">
-            <div class="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-8 flex-wrap">
-                <ul class="flex flex-col lg:flex-row gap-4">
-                    <li><a href="#" class="navLink lg:text-lg">Accueil</a></li>
-                    <li><a href="#" class="navLink lg:text-lg">Chambres</a></li>
-                    <li><a href="#" class="navLink lg:text-lg">Experiences</a></li>
-                    <li><a href="#" class="navLink lg:text-lg">Contact</a></li>
+        <div id="navbar-menu" class="order-3 hidden w-full md:order-2 md:ml-auto md:block md:w-auto" data-navbar-target="menu">
+            <div class="flex flex-col md:flex-row md:items-center gap-6 md:gap-8 flex-wrap">
+                <ul class="flex flex-col md:flex-row gap-4">
+                    <li><a href="#" class="navLink md:text-lg">Accueil</a></li>
+                    <li><a href="#" class="navLink md:text-lg">Chambres</a></li>
+                    <li><a href="#" class="navLink md:text-lg">Experiences</a></li>
+                    <li><a href="#" class="navLink md:text-lg">Contact</a></li>
                 </ul>
             </div>
         </div>

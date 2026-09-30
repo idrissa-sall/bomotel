@@ -1,14 +1,32 @@
 @import "tailwindcss";
 
 @theme {
-    --color-main: #8B2734;
-    --color-accent: #6F1B26;
-    --color-default: #FFFFFF;
-    --color-bg: #F7F2EC;
+    --color-main: #8b2734;
+    --color-accent: #6f1b26;
+    --color-default: #ffffff;
+    --color-bg: #f7f2ec;
     --color-text: #302724;
-    --color-text-secondary: #6B5C58;
+    --color-text-secondary: #6b5c58;
 }
 
 body {
     background-color: var(--color-bg);
 }
+
+/* carousel */
+/* Remplace les points par des barres */
+.splide .splide__pagination__page {
+    width: 32px;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--color-default);
+    opacity: 0.5;
+    transition: opacity 200ms ease;
+}
+
+/* Barre correspondant à la diapositive active */
+.splide .splide__pagination__page.is-active {
+    opacity: 1;
+    transform: none;
+}
+/* end carousel */

@@ -3,5 +3,186 @@
 {% block title %}Hôtel Bomotel Montluçon{% endblock %}
 
 {% block body %}
-    <h1>Bomotel Montluçon
+    <!-- homepage carousel -->
+    <section class="splide w-full relative" aria-label="Photos de l'hôtel Bomotel" data-controller="carousel">
+        <div class="splide__track">
+            <ul class="splide__list">
+                <li class="splide__slide">
+                    <img src="{{ asset('images/generated/1.png') }}" alt="todo" class="h-[50dvh] md:h-[60dvh] w-full object-cover">
+                </li>
+                <li class="splide__slide">
+                    <img src="{{ asset('images/generated/2.png') }}" alt="todo" class="h-[50dvh] md:h-[60dvh] w-full object-cover">
+                </li>
+            </ul>
+        </div>
+
+        <div class="pointer-events-none absolute bg-black inset-0 opacity-40" aria-hidden="true"></div>
+
+        <div class="pointer-events-none absolute inset-0 flex flex-col justify-center gap-4 md:px-20 px-4 py-6">
+            <p class="text-md md:text-lg text-bg font-semibold">HÔTEL À MONTLUÇON • CENTRE VILLE • 27 CHAMBRES.</p>
+            <p class="text-2xl md:text-7xl font-bold max-w-2xl text-bg">Dormez en ville.<br/>Réveillez-vous chez vous.</p>
+            <p class="text-md md:text-lg text-default font-extralight">5 catégories de chambres, un atelier ouvert 24h, un spa qui ferme à minuit.</p>
+        </div>
+    </section>
+    <main class="mt-10">
+        <div class="container m-auto">
+            <p class="text-text-secondary max-w-2xl text-lg">
+                Bienvenue à l'Hôtel Bomotel, sur toute la période d’ouverture, notre <span class="font-semibold text-main">hôtel</span> vous accueille chaleureusement pour vos escales professionnelles comme touristiques, dans une ambiance maison d’hôtes.
+            </p>
+            <p class="text-text-secondary font-semibold mt-5 text-sm">
+                Meilleur service garanti · Annulation gratuite jusqu'à 48h la veille.
+            </p>
+
+            <section class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-5 md:mt-10 border-y-2 border-main py-5 md:py-10 text-center">
+                <div class="flex flex-col gap-4 justify-center -space-y-3 md:space-y-0">
+                    <p class="text-main text-2xl md:text-5xl font-bold">27</p>
+                    <p class="text-text-secondary font-semibold">CHAMBRES, 5 FORMATS</p>
+                </div>
+                <div class="flex flex-col gap-4 justify-center -space-y-3 md:space-y-0">
+                    <p class="text-main text-2xl md:text-5xl font-bold">10'</p>
+                    <p class="text-text-secondary font-semibold">DU CENTRE VILLE</p>
+                </div>
+                <div class="flex flex-col gap-4 justify-center -space-y-3 md:space-y-0">
+                    <p class="text-main text-2xl md:text-5xl font-bold">7j/ 7</p>
+                    <p class="text-text-secondary font-semibold">RÉCEPTION OUVERTE</p>
+                </div>
+                <div class="flex flex-col gap-4 justify-center -space-y-3 md:space-y-0">
+                    <p class="text-main text-2xl md:text-5xl font-bold">7h-9h</p>
+                    <p class="text-text-secondary font-semibold">BUFFET SUCRÉ • SALÉ</p>
+                </div>
+            </section>
+
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-4 border-b-2 border-main py-5 md:py-10">
+                <div class="col-span-1 self-center space-y-3">
+                    <p class="text-main font-semibold text-xl">Bomotel</p>
+                    <h1 class="text-text text-xl md:text-4xl font-bold">Vivez une expérience unique,<br/>Hôtel au calme</h1>
+                    <p class="text-text-secondary md:max-w-lg font-semibold">
+                        Notre établissement est idéalement situé dans la commune, <span class="text-text font-extrabold">à quelques pas du centre historique</span>, au cœur du centre de la France, tout près des plus belles villes thermales.
+                    </p>
+                    <p class="text-text-secondary font-semibold">
+                        Vous profiterez du calme et de la douceur de vivre de l’Auvergne.
+                    </p>
+                </div>
+                <div class="col-span-1">
+                    <img src="{{ asset('images/generated/1-1-1.png') }}" alt="todo" class="aspect-video object-cover w-full rounded-md">
+                </div>
+            </section>
+
+            <section class="border-b-2 border-main py-5 md:py-10">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 justify-center">
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <img src="{{ asset('images/generated/1-1-1.png') }}" alt="todo">
+                        <p class="text-text-secondary text-sm font-light">
+                            Confortable, Pratique, Agréable
+                        </p>
+                        <p class="text-main text-xl md:text-2xl font-semibold">
+                            Les services 3 étoiles
+                        </p>
+                        <p class="text-text-secondary text-sm">
+                            Pour que vous puissiez pleinement profiter, nous vous proposons <span class="text-text font-extrabold">une large panoplie de prestations 3 étoiles</span>: petit-déjeuner, salons agréables, organisation d’événements, solutions de restauration et bien d’autres.
+                        </p>
+                    </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <img src="{{ asset('images/generated/1-1-1.png') }}" alt="todo">
+                        <p class="text-text-secondary text-sm font-light">
+                            Single, Double, Triple, Quadruple, Familiale
+                        </p>
+                        <p class="text-main text-xl md:text-2xl font-semibold">
+                            Les 27 chambres
+                        </p>
+                        <p class="text-text-secondary text-sm">
+                            Dans notre <span class="text-text font-extrabold">hôtel Bomotel</span>, nous disposons de <span class="text-text font-extrabold">27 chambres</span> pouvant accueillir <span class="text-text font-extrabold">une à cinq personnes</span>. Nos canapés sont de vrais lits.
+                            <br>Nos hébergements sont de parfaits pied-à-terre pour toutes vos escales au cœur de l’Auvergne.
+                        </p>
+                    </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <img src="{{ asset('images/generated/1-1-1.png') }}" alt="todo">
+                        <p class="text-text-secondary text-sm font-light">
+                            Preserver, Diminuer, Optimiser
+                        </p>
+                        <p class="text-main text-xl md:text-2xl font-semibold">
+                            L’éco-Engagement
+                        </p>
+                        <p class="text-text-secondary text-sm">
+                            À l’Hôtel Bomotel, nous sommes impliqués dans <span class="text-text font-extrabold">le respect de l’environnement</span>. Pour ce faire, nous vous proposons des escales en <span class="text-text font-extrabold">slow tourisme</span> et nous mettons en place <span class="text-text font-extrabold">différentes actions au quotidien</span>.
+                        </p>
+                    </div>
+                    <div class="col-span-1 flex flex-col gap-2">
+                        <img src="{{ asset('images/generated/1-1-1.png') }}" alt="todo">
+                        <p class="text-text-secondary text-sm font-light">
+                            Manger, Partager, Profiter
+                        </p>
+                        <p class="text-main text-xl md:text-2xl font-semibold">
+                            Le Snacking
+                        </p>
+                        <p class="text-text-secondary text-sm">
+                            Du petit-déjeuner au dîner, vous retrouverez, dans notre hôtel, <span class="text-text font-extrabold">différentes solutions de restauration</span>, qui raviront tous les appétits et toutes les envies. Des moments de convivialité vous sont promis.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-5 md:py-10">
+                <p class="text-main font-light text-sm mb-4">
+                    Les avis clients
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+                    <div class="col-span-1 flex flex-col gap-1">
+                        <p class="text-text font-semibold text-lg md:text-xl">
+                            &ldquo;Arrivée à 1h du matin, on m'a fait un thé. Je ne réserve plus ailleurs à Lyon.&rdquo;
+                        </p>
+                        <p class="text-text-secondary font-semibold text-sm">
+                            — Salomé D., quatre séjours
+                        </p>
+                    </div>
+                    <div class="col-span-1 flex flex-col gap-1">
+                        <p class="text-text font-semibold text-lg md:text-xl">
+                            &ldquo;La chambre la plus silencieuse que j'aie eue en centre-ville. Et le wifi tient les visios.&rdquo;
+                        </p>
+                        <p class="text-text-secondary font-semibold text-sm">
+                            — Marc T., voyage d'affaires
+                        </p>
+                    </div>
+                    <div class="col-span-1 flex flex-col gap-1">
+                        <p class="text-text font-semibold text-lg md:text-xl">
+                            &ldquo;On a fait notre séminaire dans l'atelier. Personne n'a regardé son téléphone.&rdquo;
+                        </p>
+                        <p class="text-text-secondary font-semibold text-sm">
+                            — Inès R., directrice de studio
+                        </p>
+                    </div>
+                </div>
+                <p class="text-right mt-4">
+                    <a href="#" class="text-accent underline font-light text-sm mb-4">
+                        Voir tous les avis <i class="bi bi-arrow-right"></i>
+                    </a>
+                </p>
+            </section>
+        </div>
+
+        <section class="px-5 md:px-10 py-5 md:py-10 bg-accent space-y-5">
+            <h1 class="text-bg text-xl md:text-4xl md:max-w-2xl font-semibold">
+                Réservez dès maintenant, Par téléphone, par mail ou via le formulaire de contact.
+            </h1>
+            <p class="text-bg md:max-w-2xl font-semibold">
+                Vous obtiendrez votre escale au meilleur prix à l’hotel Bomotel, votre hôtel à Montluçon.
+            </p>
+            <a
+                href="#"
+                class="bg-bg text-main px-4 py-2 rounded-md font-bold
+                        inline-flex items-center
+                        hover:bg-default transition-colors
+                        focus-visible:outline-2 focus-visible:outline-offset-2
+                        focus-visible:outline-default"
+            >Commencer ma réservation</a>
+        </section>
+
+        <div class="container m-auto">
+            <section class="py-5 md:py-10 space-y-4">
+                <h1 class="text-text font-semibold text-lg md:text-2xl">Nous trouver</h1>
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2754.316945995583!2d2.6232582407002587!3d46.343253674479904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f0a63241443f43%3A0x8cef3102756ef8d8!2sBomotel!5e0!3m2!1sfr!2sfr!4v1790778416118!5m2!1sfr!2sfr" title="Localisation de l’hôtel Bomotel à Montluçon" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" class="w-full h-72 md:h-100 rounded-md"></iframe>
+            </section>
+        </div>
+    </main>
 {% endblock %}
