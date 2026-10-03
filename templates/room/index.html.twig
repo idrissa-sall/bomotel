@@ -1,0 +1,110 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello RoomController!{% endblock %}
+
+{% block body %}
+    <main class="container m-auto">
+        <section class="py-5 md:py-10 flex flex-col gap-4 items-start">
+            <p class="text-md md:text-lg text-main font-semibold">
+                LES CHAMBRES
+            </p>
+            <h1 class="text-2xl md:text-7xl font-bold max-w-2xl text-text">5 Formats, un seul niveau d'exigence</h1>
+            <p class="text-text-secondary max-w-2xl">
+                Toutes les chambres : literie 160 cm minimum, double vitrage, cafetière filtre, bureau réel, douche à l'italienne. Le reste, c'est une question d'espace.
+            </p>
+        </section>
+        <section class="border-t-2 border-main py-5 md:py-10 grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="col-span-1">
+                <div class="splide w-full" aria-label="Photos des chambres doubles" data-controller="carousel">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                <img src="{{ asset('images/generated/1-1-1.png') }}" alt="todo" class="w-full aspect-video object-cover rounded-md">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="{{ asset('images/generated/1-1-1.png') }}" alt="todo" class="w-full aspect-video object-cover rounded-md">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-span-1 md:col-span-2 flex flex-col justify-between gap-4">
+                <div class="space-y-5">
+                    <div class="flex justify-between gap-4">
+                        <h1 class="text-text font-bold text-xl md:text-4xl">
+                            Single
+                        </h1>
+                        <p class="text-lg font-bold text-main">
+                            129 € / nuit
+                        </p>
+                    </div>
+                    <p class="text-text-secondary max-w-xl">
+                        Chambre individuelle, avec un lit simple, idéale pour les voyageurs en solo. Confort et intimité garantis.
+                    </p>
+                </div>
+                <div class="flex gap-2 flex-wrap">
+                    {% include('partials/option.html.twig')         
+                        with {
+                           label: 'Wifi gratuit',
+                        } only
+                    %}
+                    {% include('partials/option.html.twig')         
+                        with {
+                           label: 'Café filtre',
+                        } only
+                    %}
+                </div>
+            </div>
+        </section>
+        <section class="border-t-2 border-main py-5 md:py-10 grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="col-span-1">
+                <div class="splide w-full" aria-label="Photos des chambres doubles" data-controller="carousel">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                <img src="{{ asset('images/generated/1-1-1.png') }}" alt="todo" class="w-full aspect-video object-cover rounded-md">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="{{ asset('images/generated/1-1-1.png') }}" alt="todo" class="w-full aspect-video object-cover rounded-md">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-span-1 md:col-span-2 flex flex-col justify-between gap-4">
+                <div class="space-y-5">
+                    <div class="flex justify-between gap-4">
+                        <h1 class="text-text font-bold text-xl md:text-4xl">
+                            Double
+                        </h1>
+                        <p class="text-lg font-bold text-main">
+                            200 € / nuit
+                        </p>
+                    </div>
+                    <p class="text-text-secondary max-w-xl">
+                        Chambre individuelle, avec un lit simple, idéale pour les voyageurs en solo. Confort et intimité garantis.
+                    </p>
+                </div>
+                <div class="flex gap-2 flex-wrap">
+                    {% include('partials/option.html.twig')         
+                        with {
+                           label: 'Wifi gratuit',
+                        } only
+                    %}
+                    {% include('partials/option.html.twig')         
+                        with {
+                           label: 'Café filtre',
+                        } only
+                    %}
+                    {% include('partials/option.html.twig')         
+                        with {
+                           label: 'Lit jumeaux',
+                        } only
+                    %}
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

@@ -5,26 +5,21 @@
     data-action="keydown.esc->navbar#close"
 >
     <div class="flex flex-wrap items-center justify-between gap-4 py-6 px-4">
-        <a href="#Accueil" class="text-xl font-bold md:text-3xl">
-            <img src="{{ asset('images/logos/logo_white.png') }}" alt="todo" class="w-auto h-10">
+        <a href="{{ path('app_home') }}" class="text-xl font-bold md:text-3xl">
+            <img src="{{ asset('images/logos/logo_white.png') }}" alt="todo" class="w-auto h-12">
         </a>
 
         <div class="order-2 ml-auto flex shrink-0 items-center gap-2 md:order-3">
-            <a
-                href="#"
-                class="bg-bg text-main px-4 py-2 rounded-md font-bold
-                        inline-flex items-center gap-2
-                        hover:bg-default transition-colors
-                        focus-visible:outline-2 focus-visible:outline-offset-2
-                        focus-visible:outline-default"
-            >
-                <img
-                    src="{{ asset('images/logos/logo_contact_hotel.png') }}"
-                    alt="Contact Hôtel"
-                    class="h-10 w-auto shrink-0"
-                />
-                <span class="border-l border-main pl-1">Réserver</span>
-            </a>
+            {# Bouton de réservation #}
+            {% include('partials/primary-button-link.html.twig')
+                with {
+                    href: '#',
+                    title: 'todo',
+                    content: '<img src="' ~ asset('images/logos/logo_contact_hotel.png') ~ '" alt="Contact Hôtel" class="h-10 w-auto shrink-0" />',
+                    label: 'Réserver',
+                    labelClass: 'border-l border-main pl-1'
+                } only
+            %}
             <button
                 type="button"
                 class="group relative inline-flex size-11 items-center justify-center rounded-md
@@ -74,15 +69,18 @@
                 </svg>
             </button>
         </div>
+        
+        {# retrieve the current route #}
+        {% set currentRoute = app.request.attributes.get('_route') %}
 
-        {# Navigation masqué sur mobile #}
+        {# Navigation hidden on mobile #}
         <div id="navbar-menu" class="order-3 hidden w-full md:order-2 md:ml-auto md:block md:w-auto" data-navbar-target="menu">
             <div class="flex flex-col md:flex-row md:items-center gap-6 md:gap-8 flex-wrap">
                 <ul class="flex flex-col md:flex-row gap-4">
-                    <li><a href="#" class="navLink md:text-lg">Accueil</a></li>
-                    <li><a href="#" class="navLink md:text-lg">Chambres</a></li>
-                    <li><a href="#" class="navLink md:text-lg">Experiences</a></li>
-                    <li><a href="#" class="navLink md:text-lg">Contact</a></li>
+                    <li><a href="{{ path('app_home') }}" class="navLink md:text-lg {{ currentRoute === 'app_home' ? 'font-bold underline underline-offset-8' : 'hover:underline hover:underline-offset-8' }}">Accueil</a></li>
+                    <li><a href="{{ path('app_rooms') }}" class="navLink md:text-lg {{ currentRoute === 'app_rooms' ? 'font-bold underline underline-offset-8' : 'hover:underline hover:underline-offset-8' }}">Chambres</a></li>
+                    <li><a href="#" class="navLink md:text-lg {{ currentRoute === 'app_experiences' ? 'font-bold underline underline-offset-8' : 'hover:underline hover:underline-offset-8' }}">Experiences</a></li>
+                    <li><a href="#" class="navLink md:text-lg {{ currentRoute === 'app_contact' ? 'font-bold underline underline-offset-8' : 'hover:underline hover:underline-offset-8' }}">Contact</a></li>
                 </ul>
             </div>
         </div>
