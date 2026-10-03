@@ -1,14 +1,32 @@
 <footer class="py-5 md:py-10 border-t-2 border-main">
     <div class="container m-auto">
         <div class="grid grid-cols-2">
-            <div class="col-span-1">
+            <div class="col-span-1 space-y-5">
                 <p class="text-text-secondary text-sm text-semibold">
                     Bomotel • 2 route de moulins, 03100 Montluçon • <a href="tel:+33470057622">+33470057622</a> 
                 </p>
+                <div class="flex gap-4">
+                    {% include('partials/social-media-link.html.twig')
+                        with {
+                            href: 'https://www.facebook.com/profile.php?id=61591984315013',
+                            title: 'todo',
+                            icon: 'bi bi-facebook',
+                            style: 'text-blue-600 hover:text-blue-700'
+                        } only
+                    %}
+                    {% include('partials/social-media-link.html.twig')
+                        with {
+                            href: 'https://www.instagram.com/hotelbomotel/',
+                            title: 'todo',
+                            icon: 'bi bi-instagram',
+                            style: 'bg-gradient-to-t from-yellow-500 to-orange-700 bg-clip-text text-transparent hover:text-orange-700'
+                        } only
+                    %}
+                </div>
             </div>
             <div class="col-span-1">
                 <p class="text-end text-text-secondary text-sm text-semibold">
-                    <a href="#" title="todo"> Mentions légales</a> • <a href="#" title="todo">Avis</a>
+                    <a href="#" title="todo"> Mentions légales</a> • <a href="#" title="todo" class="text-main underline">Avis</a>
                 </p>
             </div>
         </div>

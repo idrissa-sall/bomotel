@@ -64,14 +64,14 @@
                     </p>
                 </div>
                 <div class="col-span-1">
-                    <img src="{{ asset('images/generated/1-1-1.png') }}" alt="todo" class="aspect-video object-cover w-full rounded-md">
+                    <img src="{{ asset('images/generated/1-1-1.png') }}" alt="todo" class="aspect-3/2 object-cover w-full rounded-md">
                 </div>
             </section>
 
             <section class="border-b-2 border-main py-5 md:py-10">
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 justify-center">
                     <div class="col-span-1 flex flex-col gap-2">
-                        <img src="{{ asset('images/generated/1-1-1.png') }}" alt="todo">
+                        <img src="{{ asset('images/generated/1-1-1.png') }}" alt="todo" class="w-full aspect-square object-cover rounded-md">
                         <p class="text-text-secondary text-sm font-light">
                             Confortable, Pratique, Agréable
                         </p>
@@ -83,7 +83,7 @@
                         </p>
                     </div>
                     <div class="col-span-1 flex flex-col gap-2">
-                        <img src="{{ asset('images/generated/1-1-1.png') }}" alt="todo">
+                        <img src="{{ asset('images/generated/1-1-1.png') }}" alt="todo" class="w-full aspect-square object-cover rounded-md">
                         <p class="text-text-secondary text-sm font-light">
                             Single, Double, Triple, Quadruple, Familiale
                         </p>
@@ -96,7 +96,7 @@
                         </p>
                     </div>
                     <div class="col-span-1 flex flex-col gap-2">
-                        <img src="{{ asset('images/generated/1-1-1.png') }}" alt="todo">
+                        <img src="{{ asset('images/generated/1-1-1.png') }}" alt="todo" class="w-full aspect-square object-cover rounded-md">
                         <p class="text-text-secondary text-sm font-light">
                             Preserver, Diminuer, Optimiser
                         </p>
@@ -108,7 +108,7 @@
                         </p>
                     </div>
                     <div class="col-span-1 flex flex-col gap-2">
-                        <img src="{{ asset('images/generated/1-1-1.png') }}" alt="todo">
+                        <img src="{{ asset('images/generated/1-1-1.png') }}" alt="todo" class="w-full aspect-square object-cover rounded-md">
                         <p class="text-text-secondary text-sm font-light">
                             Manger, Partager, Profiter
                         </p>
@@ -167,14 +167,13 @@
             <p class="text-bg md:max-w-2xl font-semibold">
                 Vous obtiendrez votre escale au meilleur prix à l’hotel Bomotel, votre hôtel à Montluçon.
             </p>
-            <a
-                href="#"
-                class="bg-bg text-main px-4 py-2 rounded-md font-bold
-                        inline-flex items-center
-                        hover:bg-default transition-colors
-                        focus-visible:outline-2 focus-visible:outline-offset-2
-                        focus-visible:outline-default"
-            >Commencer ma réservation</a>
+            {% include('partials/primary-button-link.html.twig')
+                with {
+                    href: '#',
+                    title: 'todo',
+                    label: 'Commencer ma réservation',
+                } only
+            %}
         </section>
 
         <div class="container m-auto">

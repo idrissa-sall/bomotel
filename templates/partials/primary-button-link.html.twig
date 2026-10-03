@@ -1,0 +1,12 @@
+<a
+    href="{{ href }}"
+    title="{{ title }}"
+    class="bg-bg text-main px-4 py-2 rounded-md font-bold
+                        inline-flex items-center gap-2
+                        hover:bg-default transition-colors
+                        focus-visible:outline-2 focus-visible:outline-offset-2
+                        focus-visible:outline-default"
+>
+    {{ content|default('')|raw }}
+    <span class="{{ labelClass|default('') }}">{{ label }}</span>
+</a>
