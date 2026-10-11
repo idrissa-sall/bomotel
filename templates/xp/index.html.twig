@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello XPController!{% endblock %}
+
+{% block body %}
+    <main class="container m-auto">
+        <section class="py-5 md:py-10 flex flex-col gap-4 items-start">
+            <p class="text-md md:text-lg text-main font-semibold">
+                LES CHAMBRES
+            </p>
+            <h1 class="text-2xl md:text-7xl font-bold max-w-2xl text-text">Table, spa, atelier...</h1>
+        </section>
+        <section class="border-t-2 border-main py-5 md:py-10 grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="col-span-1">
+                <div class="splide w-full" aria-label="Photos des chambres doubles" data-controller="carousel">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                <img src="{{ asset('images/generated/1-1-1.png') }}" alt="TODO" class="w-full aspect-video md:aspect-square object-cover rounded-md">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="{{ asset('images/generated/1-1-1.png') }}" alt="TODO" class="w-full aspect-video md:aspect-square object-cover rounded-md">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-1 md:col-span-2 flex flex-col gap-4 justify-center">
+                <h1 class="text-text font-bold text-xl md:text-4xl">Le Comptoir</h1>
+                <p class="text-text-secondary max-w-xl">
+                    Vingt-deux couverts autour d'une seule table en chêne. Un menu par jour, écrit le matin au marché de la Croix-Rousse. Ouvert aussi aux non-résidents, si on a de la place.
+                </p>
+                <p class="text-text-secondary text-sm font-semibold">
+                    19H–22H30 • DU MARDI AU SAMEDI • 38 € LE MENU
+                </p>
+            </div>
+        </section>
+        <section class="border-t-2 border-main py-5 md:py-10 grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="col-span-1 md:col-span-2 flex flex-col gap-4 justify-center">
+                <h1 class="text-text font-bold text-xl md:text-4xl">Le Comptoir</h1>
+                <p class="text-text-secondary max-w-xl">
+                    Vingt-deux couverts autour d'une seule table en chêne. Un menu par jour, écrit le matin au marché de la Croix-Rousse. Ouvert aussi aux non-résidents, si on a de la place.
+                </p>
+                <p class="text-text-secondary text-sm font-semibold">
+                    19H–22H30 • DU MARDI AU SAMEDI • 38 € LE MENU
+                </p>
+            </div>
+            <div class="col-span-1">
+                <div class="splide w-full" aria-label="Photos des chambres doubles" data-controller="carousel">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                <img src="{{ asset('images/generated/1-1-1.png') }}" alt="TODO" class="w-full aspect-video md:aspect-square object-cover rounded-md">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="{{ asset('images/generated/1-1-1.png') }}" alt="TODO" class="w-full aspect-video md:aspect-square object-cover rounded-md">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="border-t-2 border-main py-5 md:py-10 grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="col-span-1">
+                <div class="splide w-full" aria-label="Photos des chambres doubles" data-controller="carousel">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                <img src="{{ asset('images/generated/1-1-1.png') }}" alt="TODO" class="w-full aspect-video md:aspect-square object-cover rounded-md">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="{{ asset('images/generated/1-1-1.png') }}" alt="TODO" class="w-full aspect-video md:aspect-square object-cover rounded-md">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-1 md:col-span-2 flex flex-col gap-4 justify-center">
+                <h1 class="text-text font-bold text-xl md:text-4xl">Le Comptoir</h1>
+                <p class="text-text-secondary max-w-xl">
+                    Vingt-deux couverts autour d'une seule table en chêne. Un menu par jour, écrit le matin au marché de la Croix-Rousse. Ouvert aussi aux non-résidents, si on a de la place.
+                </p>
+                <p class="text-text-secondary text-sm font-semibold">
+                    19H–22H30 • DU MARDI AU SAMEDI • 38 € LE MENU
+                </p>
+            </div>
+        </section>
+    </main>
+{% endblock %}
