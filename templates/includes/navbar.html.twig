@@ -6,7 +6,7 @@
 >
     <div class="flex flex-wrap items-center justify-between gap-4 py-6 px-4">
         <a href="{{ path('app_home') }}" class="text-xl font-bold md:text-3xl">
-            <img src="{{ asset('images/logos/logo_white.png') }}" alt="todo" class="w-auto h-12">
+            <img src="{{ asset('images/logos/logo_white.png') }}" alt="TODO" class="w-auto h-12">
         </a>
 
         <div class="order-2 ml-auto flex shrink-0 items-center gap-2 md:order-3">
@@ -14,7 +14,7 @@
             {% include('partials/primary-button-link.html.twig')
                 with {
                     href: '#',
-                    title: 'todo',
+                    title: 'TODO',
                     content: '<img src="' ~ asset('images/logos/logo_contact_hotel.png') ~ '" alt="Contact Hôtel" class="h-10 w-auto shrink-0" />',
                     label: 'Réserver',
                     labelClass: 'border-l border-main pl-1'
