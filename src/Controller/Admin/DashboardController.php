@@ -51,6 +51,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkTo(MessageCrudController::class, 'Messages', 'fa fa-envelope');
         yield MenuItem::linkTo(NoticeCrudController::class, 'Avis', 'fa fa-star');
         yield MenuItem::linkTo(RoomCategoryCrudController::class, 'Catégories de chambres', 'fa fa-bed');
+        yield MenuItem::linkTo(RoomPictureCrudController::class, 'Images des chambres', 'fa fa-image');
         yield MenuItem::linkTo(RoomCategoryPreferenceCrudController::class, 'Préférences de catégories de chambres', 'fa fa-cogs');
         // yield MenuItem::linkTo(SomeCrudController::class, 'The Label', 'fas fa-list');
     }
