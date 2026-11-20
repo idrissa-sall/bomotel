@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\RoomCategory;
+use App\Entity\RoomCategoryPreference;
 use App\Entity\User;
 use App\Enum\RoomCategoryEnum;
 use Doctrine\ORM\EntityManagerInterface;
@@ -71,7 +72,19 @@ class RoomCategoryCrudController extends AbstractCrudController
             AssociationField::new('roomCategoryPreferences', 'Préférences')
                 ->setFormTypeOption('choice_label', 'label')
                 ->setFormTypeOption('by_reference', false)
-                ->setRequired(false),
+                ->setRequired(false)
+                ->formatValue(static function ($value, RoomCategory $roomCategory): string {
+                    $labels = $roomCategory->getRoomCategoryPreferences()
+                        ->map(
+                            static fn(RoomCategoryPreference $preference) =>
+                            $preference->getLabel()
+                        )
+                        ->toArray();
+
+                    return $labels === []
+                        ? 'Aucune préférence'
+                        : implode(', ', $labels);
+                }),
             DateTimeField::new('createdAt', 'Créé le')
                 ->hideOnForm()
                 ->setFormat('dd MMM yyyy à HH:mm'),

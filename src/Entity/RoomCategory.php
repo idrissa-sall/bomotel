@@ -63,9 +63,16 @@ class RoomCategory
     #[ORM\ManyToMany(targetEntity: RoomCategoryPreference::class, mappedBy: 'roomCategory')]
     private Collection $roomCategoryPreferences;
 
+    /**
+     * @var Collection<int, RoomPicture>
+     */
+    #[ORM\OneToMany(targetEntity: RoomPicture::class, mappedBy: 'roomCategory')]
+    private Collection $roomPictures;
+
     public function __construct()
     {
         $this->roomCategoryPreferences = new ArrayCollection();
+        $this->roomPictures = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -179,6 +186,36 @@ class RoomCategory
     {
         if ($this->roomCategoryPreferences->removeElement($roomCategoryPreference)) {
             $roomCategoryPreference->removeRoomCategory($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, RoomPicture>
+     */
+    public function getRoomPictures(): Collection
+    {
+        return $this->roomPictures;
+    }
+
+    public function addRoomPicture(RoomPicture $roomPicture): static
+    {
+        if (!$this->roomPictures->contains($roomPicture)) {
+            $this->roomPictures->add($roomPicture);
+            $roomPicture->setRoomCategory($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRoomPicture(RoomPicture $roomPicture): static
+    {
+        if ($this->roomPictures->removeElement($roomPicture)) {
+            // set the owning side to null (unless already changed)
+            if ($roomPicture->getRoomCategory() === $this) {
+                $roomPicture->setRoomCategory(null);
+            }
         }
 
         return $this;
