@@ -44,33 +44,43 @@
                 <p class="text-text-secondary text-sm max-w-lg">
                     Groupe, séminaire, court ou long séjour, demande particulière:  décrivez, on revient vers vous.
                 </p>
-                <form class="grid grid-cols-1 gap-4">
-                    <div class="col-span-1 flex flex-col gap-2">
-                        <label for="nom" class="text-text-secondary font-semibold">Nom</label>
-                        <input type="text" id="nom" class="border border-text-secondary rounded-md text-text-secondary w-full bg-default p-1 focus:border-text-secondary focus:border-outline-2 focus:outline-offset-2 focus:outline-text-secondary">
+
+                {% for message in app.flashes('success') %}
+                    <div class="bg-green-100 text-green-800 p-4 rounded-md">
+                        {{ message }}
                     </div>
-                    <div class="col-span-1 flex flex-col gap-2">
-                        <label for="email" class="text-text-secondary font-semibold">Email</label>
-                        <input type="email" id="email" class="border border-text-secondary rounded-md text-text-secondary w-full bg-default p-1 focus:border-text-secondary focus:border-outline-2 focus:outline-offset-2 focus:outline-text-secondary">
-                    </div>
-                    <div class="col-span-1 flex flex-col gap-2">
-                        <label for="subject" class="text-text-secondary font-semibold">Sujet</label>
-                        <input type="text" id="subject" class="border border-text-secondary rounded-md text-text-secondary w-full bg-default p-1 focus:border-text-secondary focus:border-outline-2 focus:outline-offset-2 focus:outline-text-secondary">
-                    </div>
-                    <div class="col-span-1 flex flex-col gap-2">
-                        <label for="message" class="text-text-secondary font-semibold">Message</label>
-                        <textarea id="message" rows="5" class="border border-text-secondary rounded-md text-text-secondary w-full bg-default p-1 focus:border-text-secondary focus:border-outline-2 focus:outline-offset-2 focus:outline-text-secondary"></textarea>
-                    </div>
-                    <div class="col-span-1">
-                        {% include('partials/primary-button.html.twig')
+                {% endfor %}
+
+                {{ form_start(form, {
+                    attr: { 'class': 'grid grid-cols-1 gap-4' 
+                    }
+                }) }}
+                <div class="col-span-1 flex flex-col gap-2">
+                    {{ form_label(form.name) }}
+                    {{ form_widget(form.name) }}
+                </div>
+                <div class="col-span-1 flex flex-col gap-2">
+                    {{ form_label(form.email) }}
+                    {{ form_widget(form.email) }}
+                </div>
+                <div class="col-span-1 flex flex-col gap-2">
+                    {{ form_label(form.subject) }}
+                    {{ form_widget(form.subject) }}
+                </div>
+                <div class="col-span-1 flex flex-col gap-2">
+                    {{ form_label(form.msg) }}
+                    {{ form_widget(form.msg) }}
+                </div>
+                <div class="col-span-1">
+                    {% include('partials/primary-button.html.twig')
                             with {
                                 type: 'submit',
                                 ariaLabel: 'Envoyer le formulaire de contact',
                                 label: 'Envoyer'
                             } only 
                         %}
-                    </div>
-                </form>
+                </div>
+                {{ form_end(form) }}
             </div>
             <div class="col-span-1 flex items-center justify-center">
                 <img src="{{ asset('images/generated/2.png') }}" alt="Bomotel Montluçon" class="w-full aspect-video md:aspect-4/3 object-cover rounded-md">
